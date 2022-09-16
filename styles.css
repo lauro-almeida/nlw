@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    margin: Resetamos as margens que o navegador implementa de forma automática.
+    padding: Resetamos os paddings que o navegador implementa de forma automática.
+    box-sizing: Essa opção de border-box informa que queremos que toda passagem de valor para as caixas dos nossos blocos sejam acrescentadas dentro do width da caixa. Por exemplo, se não definissemos o box-sizing coo border-box, e falássemos que o max-width é 580 e adicionássemos um padding de 40, o tamanho total dessa caxa seria 580 + 40.
+*/
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-image: url(./assets/bg.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+header {
+    margin-top: 32px;
+    height: calc(120px + 32px);
+}
+
+/*
+ text-align: Utilizado para alinhar propriedades que sejam interpretadas como texto. A img é uma tag que é identificada como texto para o css. Caso usemos e não afetar um elemento, quer dizer que ele não é do tipo texto para o css.
+*/
+
+header div {
+    display: flex;
+    margin: auto;
+    width: 120px;
+    border-radius: 50%;
+    background-image: linear-gradient(90deg, #9572FC, #43E7AD, #E2D45C);
+    padding: 4px;
+    transition: transform .3s;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+header div img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+
+    display: grid;
+    gap: 32px;
+
+    /* margin-top: 32px; */
+}
+
+/*
+    max-width: tamanho horizontal máximo
+    width: o tamanho que o elemento irá ocupar na tela do dispositivo
+    margin: essa propriedade faz com que os elementos da página fiquem centralizados
+
+    display: aqui é a forma como os elemento irão aparecer. Como queremos que apareçam um abaixo do outro, usamos o grid. Poderíamos obter o mesmo efeito usando flex e então a propriedade flex-direction: column. Mas assim estamos simplificando.
+    gap: distanciamento entre elementos
+
+    margin-top: é a margem acima do elmento
+*/
+
+section {
+    color: #FFFFFF;
+    background-image: linear-gradient(90deg, #9572FC, #43E7AD, #E2D45C);
+    padding-top: 4px;
+    border-radius: 15px;
+}
+
+/*
+    color: apesar de ser mais específicos, estamos informando que todos os textos de todos os elementos dentros das section serão desssa cor
+    background-image: estamos aqui usando um recurso de gradiente linear, indo da esquerda para direita.
+    padding-top: aqui estamos aumentando o elemento para cima, para que ele apareça acima do elemento abaixo
+    border-radius: estamos boleando as bordas
+*/
+
+section div {
+    background-color: #2A2634;
+    border-radius: 8px;
+    padding: 32px;
+    padding-top: 24px;
+}
+
+/*
+    background-color: definindo a cor de fundo
+    border-radius: boleando as bordas
+    padding: adicionando um espaço interno do elemento, em todos os lados
+    padding-top: alterando apenas o espaço interno de cima do elemento
+*/
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+/*
+    letter-spacing: diminuindo o espaço entre letras
+*/
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/*
+    letter-spacing: diminuindo o espaço entre letras
+    color: definindo a cor diferenciada deste elemento
+*/
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+section ul li {
+    transition: transform .3s;
+    
+}
+
+section ul li:hover {
+    transform: scale(1.2);
+}
+
+/*
+    display: Definindo que os elementos dentro deste elemento irão aparecer um ao lado do outro
+    flex-wrap: Definindo que os elementos que ultrapassarem o limite desta caixa deverão quebrar linha, e não ultrapassá-lo
+    gap: Definindo espaço entre os elementos dentro deste elemento
+    margin-top: adicionando uma margem superior entre a lista e o elemento acima dela
+*/
+
+.game-list img {
+    border-radius: 8px;
+    max-width: 90px;
+}
+
+/*
+    border-radius: boleando as bordas
+    max-width: adicionando uma largura máxima
+*/
+
+.chanel-list img {
+    border-radius: 50%;
+    max-width: 70px;
+    padding: 1px;
+    border: 1px solid #443E54;
+}
+
+/*
+    border-radius: boleando as bordas
+    max-width: adicionando uma largura máxima
+*/
+
+
+
+/* animation */
+
+header div {
+    animation: fromTop .7s .2s backwards;
+    /* animation-delay: 1s; */
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: fromBottom .6s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(600px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
