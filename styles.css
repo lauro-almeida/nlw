@@ -92,9 +92,14 @@ section ul li:hover {
     transform: scale(1.2);
 }
 
+.active {
+    transform: scale(1.5);
+}
+
 .game-list img {
     border-radius: 8px;
     max-width: 90px;
+    transition: transform .3m;
 }
 
 .chanel-list img {
@@ -109,7 +114,6 @@ section ul li:hover {
 
 header div {
     animation: fromTop .7s .2s backwards;
-    /* animation-delay: 1s; */
 }
 
 @keyframes fromTop {
